@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0;300;0,700;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Leo Mendez | About Page</title>
+  </head>
+  <body>
+    <!-- HEADER & NAV -->
+    <header class="header">
+      <div class="nav-container">
+        <div>
+          <h1 class="heading-title">Leo Mendez</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#intro-section" class="smooth-scroll">About</a></li>
+            <li>
+              <a href="#hobbies-section" class="smooth-scroll">Hobbies</a>
+            </li>
+            <li>
+              <a href="#contact-section" class="smooth-scroll">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="container">
+      <!-- SECTION ME -->
+      <section id="intro-section" class="container grid">
+        <div class="intro-img">
+          <img src="/media/portrait.jpg" alt="Portrait Leo" />
+        </div>
+        <div class="intro-text">
+          <h2 id="heading" class="heading-secondary">Hi, I'm Leo!</h2>
+          <p>
+            I build minimalist software. <br /><br /><br />
+            Creating visually intuitive, high-performing applications that
+            captivate users and simplify their digital experience.<br /><br />
+            And I also work as a model haha.
+          </p>
+          <div class="button-container">
+            <button class="btn btn-dark">
+              <a href="#contact-section" class="smooth-scroll">Let's chat!</a>
+            </button>
+            <button class="btn btn-light">
+              <a href="#hobbies-section" class="smooth-scroll">About</a>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION HOBBIES-->
+      <section id="hobbies-section" class="container">
+        <h2 class="heading-secondary">
+          A bit about me <span id="loading-dots">...</span>
+        </h2>
+        <div class="hobbies-container grid">
+          <div class="hobbie-card">
+            <img src="/media/hobbie-1.jpg" alt="Outdoors" class="hobbie-img" />
+            <h3>Outdoors</h3>
+            <p class="hobbie-text">
+              Meet an outdoor enthusiast who finds solace in Hong Kong's nature,
+              combining a love for adventure and outdoor sports.
+            </p>
+          </div>
+          <div class="hobbie-card">
+            <img src="/media/hobbie-2.jpg" alt="Wellness" class="hobbie-img" />
+            <h3>Wellness</h3>
+            <p class="hobbie-text">
+              Passionate about wellness practices, incorporating yoga,
+              meditation, and breathworkl fun way to expend time with friends
+            </p>
+          </div>
+          <div class="hobbie-card">
+            <img src="/media/hobbie-3.jpg" alt="workout" class="hobbie-img" />
+            <h3>Fitness</h3>
+            <p class="hobbie-text">
+              Love the combination of morning workout and hangout with the
+              inspiring elderly fitness community.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION CONTACT-->
+      <section id="contact-section">
+        <div class="container">
+          <h2 class="heading-secondary bouncer">Reach out!</h2>
+          <form class="form-container">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Full name" required />
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="How can I contact you?"
+              required
+            />
+
+            <label for="subject">Company</label>
+            <input
+              type="text"
+              id="subject"
+              placeholder="Which company do you work for?"
+              required
+            />
+
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              placeholder="How can I help?"
+              required
+            ></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <nav>
+          <ul>
+            <li><a href="#intro-section" class="smooth-scroll">About Me</a></li>
+            <li>
+              <a href="#hobbies-section" class="smooth-scroll">Hobbies</a>
+            </li>
+            <li>
+              <a href="#contact-section" class="smooth-scroll">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="footer-title">
+          <h3 class="heading-title"><a href="#intro-section">Leo Mendez</a></h3>
+          <p class="footer-text">&copy; 2023 All Rights Reserved.</p>
+        </div>
+
+        <div class="social-links">
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </div>
+      </div>
+    </footer>
+    <!-- JS script -->
+    <script src="script.js"></script>
+
+    <!-- icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
