@@ -11,18 +11,17 @@ setInterval(() => {
   }
 }, 500);
 
-//heading effect
-const heading = document.getElementById("heading");
-
 // reach out efffect
 document.addEventListener("DOMContentLoaded", () => {
   const element = document.querySelector(".bouncer");
   element.classList.add("bounce-animation");
 
+  //remove this one? or keep it for performance?
   element.addEventListener("animationend", () => {
     element.classList.remove("bounce-animation");
   });
 });
+
 //smooth scroolling
 const links = document.querySelectorAll("a.smooth-scroll");
 
