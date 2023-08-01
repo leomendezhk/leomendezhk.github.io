@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto Mono", monospace;
   color: #333;
   line-height: 1;
   font-size: 1.6rem;
@@ -73,15 +73,15 @@ button a:hover {
   background-color: #333;
   color: #fff;
 }
-
-.btn-dark:hover {
-  background-color: #777;
-  color: #fff;
-}
-
 .btn-dark a {
   color: #fff;
   text-decoration: none;
+}
+
+.btn-dark:hover,
+.btn-dark a:hover {
+  background-color: #777;
+  color: #fff;
 }
 
 .btn-light {

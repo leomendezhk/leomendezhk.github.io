@@ -1,2 +1,3 @@
 # about-page
-Landing page for Week 0 of Xccelerate bootcamp
+
+Landing page for unit 1 of Xccelerate bootcamp
