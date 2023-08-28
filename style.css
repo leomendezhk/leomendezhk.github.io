@@ -127,7 +127,7 @@ button a:hover {
 }
 
 .pulse {
-  animation: pulse 5s infinite;
+  animation: pulse 5s;
 }
 
 @keyframes pulse {
@@ -259,6 +259,17 @@ button a:hover {
 
 .form-container button:hover {
   background-color: #777;
+}
+
+/* MAP */
+#map {
+  height: 80%;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4rem;
 }
 
 /* SECTION FOOTER */

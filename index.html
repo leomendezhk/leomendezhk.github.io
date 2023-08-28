@@ -9,6 +9,20 @@
       type="text/css"
     />
 
+    <!-- leaflet cdn -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <!-- local js -->
     <link rel="stylesheet" href="style.css" />
     <title>Leo Mendez | About Page</title>
   </head>
@@ -17,7 +31,7 @@
     <header class="header">
       <div class="nav-container">
         <div>
-          <h1 class="heading-title">Leo Mendez</h1>
+          <h1 class="heading-title">LM</h1>
         </div>
         <nav class="nav">
           <ul>
@@ -95,39 +109,48 @@
       <section id="contact-section">
         <div class="container">
           <h2 class="heading-secondary bouncer">Reach out!</h2>
-          <form
-            class="form-container"
-            action="mailto:leomendezhk@gmail.com"
-            method="post"
-          >
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Full name" required />
+          <div class="contact-container">
+            <div class="form-box">
+              <form
+                class="form-container"
+                action="mailto:leomendezhk@gmail.com"
+                method="post"
+              >
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Full name" required />
 
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="How can I contact you?"
-              required
-            />
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="How can I contact you?"
+                  required
+                />
 
-            <label for="subject">Company</label>
-            <input
-              type="text"
-              id="subject"
-              placeholder="Which company do you work for?"
-              required
-            />
+                <label for="subject">Company</label>
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="Which company do you work for?"
+                  required
+                />
 
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              placeholder="How can I help?"
-              required
-            ></textarea>
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  placeholder="How can I help?"
+                  required
+                ></textarea>
 
-            <button type="submit">Submit</button>
-          </form>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+
+            <!-- MAP -->
+            <div class="map-box">
+              <div id="map"></div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -148,7 +171,7 @@
         </nav>
 
         <div class="footer-title">
-          <h3 class="heading-title"><a href="#intro-section">Leo Mendez</a></h3>
+          <h3 class="heading-title"><a href="#intro-section">LM</a></h3>
           <p class="footer-text">&copy; 2023 All Rights Reserved.</p>
         </div>
 

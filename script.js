@@ -41,3 +41,22 @@ links.forEach((link) => {
     }
   });
 });
+
+// MAP
+var map = L.map("map").setView([22.28723210219561, 114.19037337459282], 15);
+
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  attribution: "© OpenStreetMap",
+}).addTo(map);
+
+const lat = 22.28723210219561;
+const lng = 114.19037337459282;
+
+var marker = L.marker([lat, lng]).addTo(map);
+
+marker
+  .bindPopup(
+    "<b>Come Visit!</b><br>Xccelerate, 3/F, Citicorp Centre, 18 Whitfield Rd, Tin Hau."
+  )
+  .openPopup();
