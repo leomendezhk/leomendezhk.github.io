@@ -1,0 +1,351 @@
+:root {
+  --black: #333;
+  --white: #fff;
+  --gray: #9b9b9b;
+  --light-gray: #f4f3f2;
+}
+
+@font-face {
+  font-family: "Tusker Grotesk";
+  src: url("/fonts/TuskerGrotesk-4700Bold.woff2") format("woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-family: "Inter", serif;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  color: var(--black);
+  background-color: var(--white);
+  padding: 0 2rem;
+  line-height: 1.6;
+}
+
+h3 {
+  font-family: "Bebas Neue", serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+  transition: all 0.3s;
+}
+
+a:hover {
+  color: var(--gray);
+}
+
+ul {
+  list-style: none;
+}
+
+/* //////////////////////////////////////// */
+
+.header {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav li a {
+  transition: all 0.3s;
+}
+
+.nav li a:hover {
+  color: var(--gray);
+}
+
+/* /////////////// MAIN //////////////// */
+
+.card {
+  height: calc(100vh - 110px);
+  display: flex;
+  gap: 4rem;
+}
+
+/* CARD RIGHT SIDE */
+.card-right {
+  /* background-color: #9b9b9b; */
+  flex: 1;
+  display: flex;
+}
+
+.card-container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card-title h2 {
+  font-family: "Tusker Grotesk", sans-serif;
+  text-transform: uppercase;
+  font-size: 5rem;
+  line-height: 1;
+  white-space: nowrap;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+  width: 100%;
+}
+
+.card-title p {
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+/* CARD CONTACT */
+
+.card-contact {
+  background-color: var(--light-gray);
+  display: flex;
+  gap: 1rem;
+  width: fit-content;
+  border-radius: 10px;
+  width: 100%;
+  height: 170px;
+}
+
+.card-contact img {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  overflow-wrap: break-word; /* Handles long emails */
+  word-wrap: break-word;
+}
+
+.card-contact-info p {
+  max-width: 100%; /* Ensures text stays within container */
+}
+
+/* CARD INFO */
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-info h3 {
+  margin-bottom: 0.5rem;
+}
+.card-info strong {
+  letter-spacing: 0.1rem;
+}
+
+.card-pricing-one {
+  opacity: 0.4;
+}
+
+.card-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3rem;
+  height: 3rem;
+
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.card-social a:hover {
+  background-color: var(--light-gray);
+}
+
+.card-social a img {
+  width: 24px; /* Adjust icon size */
+  height: 24px;
+}
+
+/* ANIMATION IMAGES ROTATION */
+
+.card-img {
+  position: relative;
+  width: 50%;
+  height: 95%;
+}
+
+.card-img img {
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  object-fit: contain;
+  animation: imageSequence 5s infinite; /* 10 images × 0.5 seconds each = 5s total */
+}
+
+/* Target each image with a different animation delay */
+.card-img img:nth-child(1) {
+  animation-delay: 0s;
+}
+.card-img img:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.card-img img:nth-child(3) {
+  animation-delay: 1s;
+}
+.card-img img:nth-child(4) {
+  animation-delay: 1.5s;
+}
+.card-img img:nth-child(5) {
+  animation-delay: 2s;
+}
+.card-img img:nth-child(6) {
+  animation-delay: 2.5s;
+}
+.card-img img:nth-child(7) {
+  animation-delay: 3s;
+}
+.card-img img:nth-child(8) {
+  animation-delay: 3.5s;
+}
+.card-img img:nth-child(9) {
+  animation-delay: 4s;
+}
+.card-img img:nth-child(10) {
+  animation-delay: 4.5s;
+}
+
+@keyframes imageSequence {
+  0%,
+  12.5% {
+    opacity: 1;
+  }
+  13%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* FOOTER */
+footer p {
+  opacity: 0.3;
+}
+
+/* /////////////////// MOBILE ////////////////// */
+/* Update and add to your media queries */
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0 1rem;
+  }
+
+  .card {
+    height: auto;
+    flex-direction: column-reverse; /* Changed from column-reverse to column */
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .card-right {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the content */
+  }
+
+  .card-img {
+    width: 100%;
+    height: 400px;
+  }
+
+  .card-container {
+    width: 100%;
+    align-items: center; /* Centers content */
+    text-align: center; /* Centers text */
+  }
+
+  .card-title {
+    text-align: center;
+  }
+
+  .card-title h1 {
+    font-size: 3.5rem;
+    white-space: normal;
+  }
+
+  .card-contact {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .card-info {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center; /* Centers content */
+  }
+
+  .card-social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center; /* Centers social icons */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .card-title h1 {
+    font-size: 3rem;
+  }
+
+  .card-img {
+    height: 300px;
+  }
+
+  .card-contact {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .card-contact img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .card-contact-info {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .card-pricing {
+    text-align: center;
+  }
+}
