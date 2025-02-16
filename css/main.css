@@ -206,14 +206,13 @@ ul {
 }
 
 .card-img img {
-  border-radius: 10px;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
-  object-fit: contain;
+  border-radius: 10px;
   animation: imageSequence 5s infinite; /* 10 images × 0.5 seconds each = 5s total */
 }
 
@@ -289,6 +288,10 @@ footer p {
   .card-img {
     width: 100%;
     height: 400px;
+  }
+
+  .card-img img {
+    object-fit: contain;
   }
 
   .card-container {
