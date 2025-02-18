@@ -113,7 +113,7 @@ ul {
 }
 
 .card-title p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   width: 100%;
 }
 
@@ -262,6 +262,7 @@ ul {
 /* FOOTER */
 footer p {
   opacity: 0.3;
+  font-size: 0.8rem;
 }
 
 /* /////////////////// MOBILE ////////////////// */
