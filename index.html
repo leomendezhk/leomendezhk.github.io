@@ -95,11 +95,10 @@
                   <h3>Leo Mendez</h3>
                   <p>
                     <a
-                      href="mailto:hi@leomendez.com"
+                      id="email-link"
+                      href="#"
                       aria-label="Send email to Leo"
-                    >
-                      <p>hi@leomendez.com</p>
-                    </a>
+                    ></a>
                   </p>
                   <p>
                     <a
@@ -265,5 +264,22 @@
     </script>
 
     <!-- ONLY ALLOW HK, CN, JP, SG VISITORS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Email parts
+        const user = "hi";
+        const domain = "leomendez.com";
+
+        // Set the link content
+        const emailLink = document.getElementById("email-link");
+        emailLink.textContent = user + "@" + domain;
+
+        // Set href on click (prevents scraping)
+        emailLink.addEventListener("click", function (e) {
+          e.preventDefault();
+          window.location.href = "mailto:" + user + "@" + domain;
+        });
+      });
+    </script>
   </body>
 </html>
