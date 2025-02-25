@@ -265,58 +265,5 @@
     </script>
 
     <!-- ONLY ALLOW HK, CN, JP, SG VISITORS -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const allowedCountries = ["HK", "CN", "JP", "SG"];
-        const blockedMessage = `
-          <div style="
-            position: fixed;
-            inset: 0;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            z-index: 9999;
-          ">
-            <div style="max-width: 28rem;">
-              <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">
-                Access Restricted
-              </h2>
-              <p style="margin-bottom: 1rem;">
-                We apologize, but access to this website is restricted in your region.
-              </p>
-              <p style="font-size: 0.875rem; color: #6b7280;">
-                Please contact us if you believe this is an error.
-              </p>
-            </div>
-          </div>
-        `;
-
-        if ("geolocation" in navigator) {
-          navigator.geolocation.getCurrentPosition(
-            async (position) => {
-              try {
-                // Use reverse geocoding to get country from coordinates
-                const response = await fetch(
-                  `https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}`
-                );
-                const data = await response.json();
-                const countryCode = data.address.country_code.toUpperCase();
-
-                if (!allowedCountries.includes(countryCode)) {
-                  document.body.innerHTML = blockedMessage;
-                }
-              } catch (error) {
-                console.error("Error checking location:", error);
-              }
-            },
-            (error) => {
-              console.error("Geolocation error:", error);
-            }
-          );
-        }
-      });
-    </script>
   </body>
 </html>
