@@ -197,6 +197,11 @@ ul {
   height: 24px;
 }
 
+.gym-location {
+  display: flex;
+  align-items: center;
+}
+
 /* ANIMATION IMAGES ROTATION */
 
 .card-img {
