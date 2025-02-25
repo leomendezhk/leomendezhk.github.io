@@ -265,31 +265,44 @@
     </script>
 
     <!-- ONLY ALLOW HK, CN, JP, SG VISITORS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ip-api/2.1.0/ip-api.min.js"></script>
-
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const allowedCountries = ["HK", "CN", "JP", "SG"]; // Add your country codes here
+        const allowedCountries = ["HK", "CN", "JP", "SG"];
         const blockedMessage = `
-        <div class="fixed inset-0 bg-white flex items-center justify-center p-6 rounded-lg shadow-xl">
-            <div class="max-w-md">
-                <h2 class="text-2xl font-bold mb-4">Access Restricted</h2>
-                <p class="mb-4">We apologize, but access to this website is restricted in your region.</p>
-                <p class="text-sm text-gray-500">Please contact us if you believe this is an error.</p>
+          <div style="
+            position: fixed;
+            inset: 0;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            z-index: 9999;
+          ">
+            <div style="max-width: 28rem;">
+              <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">
+                Access Restricted
+              </h2>
+              <p style="margin-bottom: 1rem;">
+                We apologize, but access to this website is restricted in your region.
+              </p>
             </div>
-        </div>
-    `;
+          </div>
+        `;
 
-        ipApiCall();
+        // Use fetch with the IP-API JSON endpoint
+        fetch("http://ip-api.com/json/")
+          .then((response) => response.json())
+          .then((data) => {
+            if (!allowedCountries.includes(data.countryCode)) {
+              document.body.innerHTML = blockedMessage;
+            }
+          })
+          .catch((error) => {
+            console.error("Error checking location:", error);
+            // Optionally handle the error case
+          });
       });
-
-      function ipApiCall() {
-        IpApi.get(function (data) {
-          if (!allowedCountries.includes(data.countryCode)) {
-            document.body.innerHTML = blockedMessage;
-          }
-        });
-      }
     </script>
   </body>
 </html>
