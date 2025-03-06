@@ -329,16 +329,14 @@
         // Email parts
         const user = "hi";
         const domain = "leomendez.com";
+        const emailAddress = user + "@" + domain;
 
-        // Set the link content
+        // Set the link content and href
         const emailLink = document.getElementById("email-link");
-        emailLink.textContent = user + "@" + domain;
-
-        // Set href on click (prevents scraping)
-        emailLink.addEventListener("click", function (e) {
-          e.preventDefault();
-          window.location.href = "mailto:" + user + "@" + domain;
-        });
+        if (emailLink) {
+          emailLink.textContent = emailAddress;
+          emailLink.href = "mailto:" + emailAddress; // Set href immediately
+        }
       });
     </script>
   </body>
